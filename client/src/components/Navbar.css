@@ -1,0 +1,30 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbarContainer{
+    background-color: #022b3a;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2 rem;
+    padding: 0 1 rem;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.navbarContainer a{
+    font-size: 40px;
+    color: white;
+}
+ul li{
+    margin-right: 30px;
+}
+ul i{
+    margin-right: 5px;
+}
