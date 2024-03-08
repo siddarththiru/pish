@@ -3,10 +3,8 @@ import ImageSlider from "./components/ImageSlider";
 import Navbar from "./components/Navbar";
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 
-
-const theme = extendTheme();
 function App() {
   const [placeList, setPlaceList] = useState([{}]);
 
@@ -17,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <div className="App">
         <Navbar />
         <ImageSlider placeList={placeList} />
