@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+body {
+  
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:aqua;
+}
+.wrapper{
+  position: fixed;
+  margin-top: 10%;
+  margin-left: 40%;
+  width: 450px;
+  color: white;
+  border-radius: 25px;
+  border-width: 20px;
+  border-color: black;
+  justify-content: center;
+  background: rgba(		2, 43, 58 ,0.3)
+}
+
+.wrapper .heading{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40%;
+}
+.heading button{
+    height: 25px;
+    width: 25px;
+    justify-content: center;
+    padding-top: 10px;
+    background:transparent;
+    border: transparent;
+}
+.heading .icon{
+    position:absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color: white;
+}
+
+
+.wrapper .input-box{
+  position: relative;
+  width: 90%;
+  height: 50px;
+  margin: 30px ;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border: 2px solid rgba(225,225,225,0.2);
+  border-radius:40px;
+
+}
+.input-box input{
+  width: 90%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.input-box input::placeholder{
+  color: white;
+}
+.input-box .icon{
+  position:absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+.wrapper .forget{
+  display: flex;
+  justify-content: space-between;
+  padding:0px 17px 0px 17px;
+}
+.wrapper a{
+    color: white;
+    text-decoration: none;
+}
+.wrapper .loginButton{
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+
+}
+.loginButton button:hover{
+  background-color:#022B3A;
+}
+.loginButton button{
+    width: 95%;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: medium;
+    background:transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(225,225,225,0.2);
+    border-radius:40px;
+    color: white;
+}
+.wrapper .newMember{
+  display: flex;
+  justify-content: center;
+  width: 95%;
+}

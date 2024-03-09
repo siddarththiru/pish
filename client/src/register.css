@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body{
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+h1{
+    text-align: center;
+}
+.wrapper{
+  position: relative;
+  background-color: rgba(220,20,60, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  border-color: black;
+  border-radius: 40px;
+}
+.userInputName{
+  background:transparent;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  padding-left: 50px;
+}
+.userInputName input{
+  width: 142px;
+  height: 35px;
+  border-radius: 15px;
+  background:transparent;
+  border: 2px solid rgba(225,225,225,0.2);
+}
+
+.wrapper .userInput{
+  background:transparent;
+  display: flex;
+  justify-content: center;
+  padding:10px;
+
+}
+.userInput input{
+  width: 331px;
+  height: 35px;
+  border-radius: 15px;
+  background:transparent;
+  border: 2px solid rgba(225,225,225,0.2);
+}
+input::placeholder{
+  padding-left: 10px;
+  color: black;
+}
+input{
+    padding-left: 10px;
+}
+.memberType{
+    padding-bottom: 25px;
+    background:transparent;
+    padding-top: 10px;
+    
+}
+h3{
+  text-align: center;
+}
+.memberType .userInput{
+  display: flex;
+  justify-content: space-between;
+  font-size: 10em;
+  
+
+}
+.wrapper .loginButton{
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+
+}
+.loginButton button:hover{
+  background-color:#022B3A;
+}
+.loginButton button{
+    width: 95%;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: medium;
+    background:transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(225,225,225,0.2);
+    border-radius:40px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
