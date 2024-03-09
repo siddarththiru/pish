@@ -18,7 +18,7 @@ function App() {
     <ChakraProvider>
       <div className="App">
         <Navbar />
-        <ImageSlider placeList={placeList} />
+        <ImageSlider placeList={placeList.slice(0, 6)} />
       </div>
     </ChakraProvider>
   );
