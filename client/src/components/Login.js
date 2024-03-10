@@ -2,8 +2,8 @@ import { FaRegUserCircle} from "react-icons/fa";
 import { TbPasswordUser } from "react-icons/tb";
 import { ImExit } from "react-icons/im";
 
-import './login.css'
-const Login =()=> {
+import './Login.css'
+const Login = () => {
     return(
         <div className='wrapper'>
           <form>
