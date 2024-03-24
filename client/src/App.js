@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
+import AddPlaces from "./pages/AddPlaces";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/add-places" element={<AddPlaces />} />
           </Routes>
         </BrowserRouter>
       </div>
