@@ -25,7 +25,7 @@ function PlaceDetails(props) {
       "Seven Wonders  a perfect spot for a cup of coffee or a healthy smoothie. They offer a variety of wraps and bagels as well which are truly delicious.",
     mealOptions: "Vegan and Vegetarian avaiable",
     diningOptions: "Dine-in or Take away available",
-    maps: '<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=seven%20wonder%20excise%20walk+(seven%20wonders%20ifsc)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe></div>',
+    maps: "https://www.openstreetmap.org/export/embed.html?bbox=-6.24536007642746%2C53.347999156272195%2C-6.242849528789521%2C53.34902388213419&amp;layer=mapnik",
   };
 
   return (
@@ -99,20 +99,17 @@ function PlaceDetails(props) {
         <Box borderRadius="30px">
           <iframe
             id="map-canvas"
-            class="map_part"
+            className="map_part"
             width="600"
             height="450"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=seven wonders excise walk&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          >
-            Powered by{" "}
-            <a href="https://www.googlemapsgenerator.com">embed google maps</a>{" "}
-            and <a href="https://skipboregler.se/">skipbo regler</a>
-          </iframe>
+            marginHeight="0"
+            marginWidth="0"
+            src={place.maps}
+          ></iframe>
         </Box>
+
         <br />
       </Flex>
       <br />
