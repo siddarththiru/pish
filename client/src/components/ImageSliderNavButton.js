@@ -7,11 +7,16 @@ function ImageSliderNavButton(props) {
     <Flex
       marginLeft="50px"
       p="2"
-      backgroundColor="#1F7A8C"
+      backgroundColor="#9FB8AD80"
       height="100%"
       width="300px"
+      borderRadius="5px"
     >
-      <Image src={place?.images?.link1} height="50px"></Image>
+      <Image
+        src={place?.images?.link1}
+        height="50px"
+        borderRadius="5px"
+      ></Image>
       <Text p="2" color="white">
         {place?.name}
       </Text>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaHome, FaSearch, FaUser } from "react-icons/fa";
+import NavItem from "./NavItem";
 
 function Navbar() {
   return (
@@ -11,11 +12,11 @@ function Navbar() {
       justify="space-between"
       wrap="wrap"
       padding="1rem"
-      bg="#022b3a"
+      bg="#9FB8AD30"
       color="white"
     >
       <Link to="/" fontWeight="bold" textDecoration="none" color="white">
-        <Text fontSize="20px">PISH</Text>
+        <Text fontSize="30px">PISH</Text>
       </Link>
       <Box display={{ base: "none", md: "block" }}>
         <Flex pr="5" align="center">
@@ -33,14 +34,5 @@ function Navbar() {
     </Flex>
   );
 }
-
-const NavItem = ({ to, icon, text }) => (
-  <Link to={to} display="block" color="white" mr={5} textDecoration="none">
-    <Flex align="center">
-      {icon}
-      <Text>{text}</Text>
-    </Flex>
-  </Link>
-);
 
 export default Navbar;

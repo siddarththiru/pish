@@ -20,10 +20,14 @@ function ImageSlider(props) {
   };
 
   return (
-    <div className="container">
-      <div className="sliderArea">
-        <div className="sliderImg" style={sliderImgStyles}></div>
-      </div>
+    <Box className="container">
+      <Box className="sliderArea">
+        <Box
+          className="sliderImg"
+          borderRadius="20px"
+          style={sliderImgStyles}
+        ></Box>
+      </Box>
       <Flex flexDirection="column">
         {placeList.map((place, index) => (
           <Box
@@ -35,7 +39,7 @@ function ImageSlider(props) {
           </Box>
         ))}
       </Flex>
-    </div>
+    </Box>
   );
 }
 
