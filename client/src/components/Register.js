@@ -1,7 +1,10 @@
 import "./Register.css";
+import Navbar from "./Navbar";
 
 const Register = () => {
   return (
+    <>
+    <Navbar/>
     <div className="wrapper">
       <form>
         <h1>Register here</h1>
@@ -40,6 +43,7 @@ const Register = () => {
         </div>
       </form>
     </div>
+    </>
   );
 };
 

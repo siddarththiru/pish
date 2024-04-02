@@ -1,10 +1,13 @@
 import { FaRegUserCircle} from "react-icons/fa";
 import { TbPasswordUser } from "react-icons/tb";
 import { ImExit } from "react-icons/im";
-
-import './Login.css'
+import NavItem from "./NavItem";
+import Navbar from "./Navbar";
+import "./Login.css";
 const Login = () => {
     return(
+        <>
+        <Navbar/>
         <div className='wrapper'>
           <form>
             <div className="heading">
@@ -27,10 +30,11 @@ const Login = () => {
               <button type="submit">login</button>
             </div>
             <div className="newMember">
-              <p>new member  <a href="#">register here</a></p>
+              <NavItem to="/register"  text="new member Register Here" />
             </div>
           </form>
         </div>
+        </>
   
     )
   

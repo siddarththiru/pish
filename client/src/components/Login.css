@@ -9,6 +9,8 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color:aqua;
+  
+
 }
 .wrapper{
   position: fixed;
@@ -17,10 +19,12 @@ body {
   width: 450px;
   color: white;
   border-radius: 25px;
-  border-width: 20px;
   border-color: black;
   justify-content: center;
-  background: rgba(		2, 43, 58 ,0.3)
+  background: rgba(5, 18, 84, 0.3);
+  padding-top: 10px;
+  height: 400px;
+
 }
 
 .wrapper .heading{
@@ -81,11 +85,11 @@ body {
 .wrapper .forget{
   display: flex;
   justify-content: space-between;
-  padding:0px 17px 0px 17px;
 }
 .wrapper a{
     color: white;
     text-decoration: none;
+    padding: 17px;
 }
 .wrapper .loginButton{
   padding-top: 15px;

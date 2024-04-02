@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import AddPlaces from "./pages/AddPlaces";
 import PlaceDetails from "./pages/PlaceDetails";
+import Login from "./components/Login"
+import Register from "./components/Register"
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/add-places" element={<AddPlaces />} />
             <Route path="/place-details/:id" element={<PlaceDetails />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </BrowserRouter>
       </div>
