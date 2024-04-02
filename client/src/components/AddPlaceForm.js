@@ -3,7 +3,7 @@ import { Flex, Heading, FormControl, FormLabel, Input } from "@chakra-ui/react";
 
 function AddPlaceForm() {
   return (
-    <Flex flexDir="column">
+    <Flex flexDir="column" color="white">
       <Heading>Add a Place</Heading>
       <FormControl isRequired width="500px">
         <Input placeholder="Name" />

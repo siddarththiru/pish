@@ -1,9 +1,10 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #2a2e41;
 }
 .App{
     background-image: url("/src/images/backgroundImage.svg");
     background-size: cover;
-    min-height: 100vh;
+    height: 150vh;
 }
