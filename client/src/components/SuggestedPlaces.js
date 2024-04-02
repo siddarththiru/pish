@@ -8,7 +8,14 @@ function SuggestedPlaces({ placeList }) {
       <Flex flexDir="row" padding="20px">
         {placeList.map((place, index) => (
           <Box key={index} height="100px" marginRight="20px">
-            <Image width="350px" borderRadius="10px" src={place.images.link1} />
+            {/*Bug fix*/}
+            {place.images && place.images.link1 && (
+              <Image
+                width="350px"
+                borderRadius="10px"
+                src={place.images.link1}
+              />
+            )}
             <Box
               padding="5px"
               borderRadius="10px"
