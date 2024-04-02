@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ImageSlider.css";
 import ImageSliderNavButton from "./ImageSliderNavButton";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 function ImageSlider(props) {
   const [placeIndex, setPlaceIndex] = useState(0);
   const placeList = props.placeList;
+
+  const incrementPlaceIndex = () => {
+    setPlaceIndex((prevIndex) => (prevIndex + 1) % placeList.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      incrementPlaceIndex();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const sliderImgStyles = {
     height: "100%",
@@ -18,16 +31,40 @@ function ImageSlider(props) {
   const handleNavButtonClick = (index) => {
     setPlaceIndex(index);
   };
-
   return (
     <Box className="container">
-      <Box className="sliderArea">
-        <Box
-          className="sliderImg"
-          borderRadius="20px"
-          style={sliderImgStyles}
-        ></Box>
-      </Box>
+      <Link
+        key={placeIndex}
+        to={{
+          pathname: `/place-details/${placeList[placeIndex]._id}`,
+          state: { places: placeList[placeIndex] },
+        }}
+      >
+        <Box height="500px" width="700px">
+          <Box
+            className="sliderImg"
+            borderRadius="20px"
+            style={sliderImgStyles}
+          ></Box>
+          <Box
+            mt="-100px"
+            height="100px"
+            borderRadius="10px"
+            style={{
+              background:
+                "linear-gradient(to right, #383E56F2, #383E56CC, #383E5600)",
+            }}
+          >
+            <Heading pl="2" color="#FB743E">
+              {placeList[placeIndex]?.name}
+            </Heading>
+            <Text pl="2" fontWeight="400" fontStyle="italic" color="#fff">
+              {placeList[placeIndex].category}
+            </Text>
+          </Box>
+        </Box>
+      </Link>
+
       <Flex flexDirection="column">
         {placeList.map((place, index) => (
           <Box

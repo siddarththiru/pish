@@ -2,30 +2,31 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../components/Navbar";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
-function PlaceDetails(props) {
-  let place = props.place;
-  place = {
+function PlaceDetails() {
+  // let place = useLocation().state.place;
+  let place = {
     _id: {
       $oid: "65e0a24febab116997b33273",
     },
     name: "Seven Wonders",
-    location: "Excise Walk, International Financial Services Centre, Dublin 1",
-    type: "Cafe and breakfast",
-    timings: "Monday-Friday: 7am-6pm Saturday & Sunday: 11.30am-4pm",
+    location: "Grand Canal Dock Dart Station, Barrow St, Dublin 4 ",
+    category: "Restaurant/Cafe",
+    timings: "Mon-Fri: 7am-6pm Sat & Sun: 11.30am-4pm",
     phone: "01 672 0212",
     email: "info@sevenwonders.ie",
-    discounts: "15% Student discount",
+    discounts: "15% Student discount ",
     images: {
       link1: "https://i.imgur.com/Bk4BTKa_d.webp?maxwidth=760&fidelity=grand",
-      link2: "https://i.imgur.com/Bk4BTKa_d.webp?maxwidth=760&fidelity=grand",
-      link3: "https://i.imgur.com/Bk4BTKa_d.webp?maxwidth=760&fidelity=grand",
+      link2: "https://i.imgur.com/LmITuqT_d.webp?maxwidth=760&fidelity=grand",
+      link3: "https://i.imgur.com/yLBNL3b_d.webp?maxwidth=760&fidelity=grand",
     },
     description:
-      "Seven Wonders  a perfect spot for a cup of coffee or a healthy smoothie. They offer a variety of wraps and bagels as well which are truly delicious.",
+      "The breakfast burritos and bagels are amazing ! The finest breakfast sandwich one can find in Dublin, and at a reasonable price-- around €6.50 for a sandwich and a coffee!",
     mealOptions: "Vegan and Vegetarian avaiable",
     diningOptions: "Dine-in or Take away available",
-    maps: "https://www.openstreetmap.org/export/embed.html?bbox=-6.24536007642746%2C53.347999156272195%2C-6.242849528789521%2C53.34902388213419&amp;layer=mapnik",
+    maps: "https://maps.google.com/maps?q=seven%20wonders%20excise%20walk&t=&z=15&ie=UTF8&iwloc=&output=embed",
   };
 
   return (
@@ -53,21 +54,21 @@ function PlaceDetails(props) {
             p="2"
             borderRadius="20px"
             src={place.images.link1}
-            width="500px"
+            height="400px"
             alt="image of the place"
           />
           <Image
             p="2"
             borderRadius="20px"
             src={place.images.link2}
-            width="500px"
+            width="400px"
             alt="image of the place"
           />
           <Image
             p="2"
             borderRadius="20px"
             src={place.images.link3}
-            width="500px"
+            width="400px"
             alt="image of the place"
           />
         </Flex>
@@ -88,7 +89,7 @@ function PlaceDetails(props) {
           </Flex>
         </Flex>
         <Text fontWeight="400" fontStyle="italic">
-          {place.type}
+          {place.category}
         </Text>
         <Text>{place.description}</Text>
         <Text>{place.diningOptions}</Text>

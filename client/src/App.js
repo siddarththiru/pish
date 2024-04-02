@@ -15,7 +15,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/add-places" element={<AddPlaces />} />
-            <Route path="/place-details" element={<PlaceDetails />} />
+            <Route path="/place-details/:id" element={<PlaceDetails />} />
           </Routes>
         </BrowserRouter>
       </div>
