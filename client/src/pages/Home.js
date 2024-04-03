@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import ImageSlider from "../components/ImageSlider";
 import SuggestedPlaces from "../components/SuggestedPlaces";
 
-function Home() {
+function Home({ setActivePlace }) {
   const [placeList, setPlaceList] = useState([{}]);
 
   useEffect(() => {
@@ -17,7 +17,10 @@ function Home() {
   return (
     <>
       <Navbar />
-      <ImageSlider placeList={placeList.slice(0, 6)} />
+      <ImageSlider
+        placeList={placeList.slice(0, 6)}
+        setActivePlace={setActivePlace}
+      />
       <SuggestedPlaces placeList={placeList.slice(0)} />
     </>
   );

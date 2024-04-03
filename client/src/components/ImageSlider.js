@@ -4,9 +4,9 @@ import ImageSliderNavButton from "./ImageSliderNavButton";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-function ImageSlider(props) {
+function ImageSlider({ placeList, setActivePlace }) {
   const [placeIndex, setPlaceIndex] = useState(0);
-  const placeList = props.placeList;
+  setActivePlace(placeList[placeIndex]);
 
   const incrementPlaceIndex = () => {
     setPlaceIndex((prevIndex) => (prevIndex + 1) % placeList.length);
@@ -37,7 +37,7 @@ function ImageSlider(props) {
         key={placeIndex}
         to={{
           pathname: `/place-details/${placeList[placeIndex]._id}`,
-          state: { places: placeList[placeIndex] },
+          state: { place: placeList[placeIndex] },
         }}
       >
         <Box height="500px" width="700px">
