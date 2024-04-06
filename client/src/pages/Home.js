@@ -1,19 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Axios from "axios";
+
 import Navbar from "../components/Navbar";
 import ImageSlider from "../components/ImageSlider";
 import SuggestedPlaces from "../components/SuggestedPlaces";
 
-function Home({ setActivePlace }) {
-  const [placeList, setPlaceList] = useState([{}]);
-
-  useEffect(() => {
-    Axios.get("http://localhost:3001/getPlaces").then((response) => {
-      setPlaceList(response.data);
-    });
-  }, []);
-
+function Home({ setActivePlace, placeList }) {
   return (
     <>
       <Navbar />
