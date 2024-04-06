@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import AddPlaces from "./pages/AddPlaces";
 import PlaceDetails from "./pages/PlaceDetails";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   const [placeList, setPlaceList] = useState([{}]);
@@ -39,6 +41,8 @@ function App() {
               path="/place-details/:id"
               element={<PlaceDetails activePlace={activePlace} />}
             />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </BrowserRouter>
       </div>

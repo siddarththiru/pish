@@ -4,13 +4,15 @@ h1{
 }
 .wrapper{
   position: relative;
-  background-color: rgba(220,20,60, 0.2);
+  background-color: rgba(7, 25, 113, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 600px;
   border-color: black;
   border-radius: 40px;
+  height: 500px;
+  
 }
 .userInputName{
   background:transparent;
@@ -20,7 +22,7 @@ h1{
   padding-left: 50px;
 }
 .userInputName input{
-  width: 142px;
+  width: 157px;
   height: 35px;
   border-radius: 15px;
   background:transparent;
@@ -43,7 +45,7 @@ h1{
 }
 input::placeholder{
   padding-left: 10px;
-  color: black;
+  color: white;
 }
 input{
     padding-left: 10px;
@@ -52,15 +54,15 @@ input{
     padding-bottom: 25px;
     background:transparent;
     padding-top: 10px;
+
     
 }
 h3{
   text-align: center;
 }
-.memberType .userInput{
+.memberType .option{
   display: flex;
   justify-content: space-between;
-  font-size: 10em;
   
 
 }

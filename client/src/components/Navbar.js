@@ -27,7 +27,7 @@ function Navbar() {
             <NavItem to="/search" icon={<FaSearch />} text="Search" />
           </Box>
           <Box m="3">
-            <NavItem to="/account" icon={<FaUser />} text="Account" />
+            <NavItem to="/login" icon={<FaUser />} text="Account" />
           </Box>
         </Flex>
       </Box>
