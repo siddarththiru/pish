@@ -1,50 +1,58 @@
 import "./Register.css";
 import Navbar from "./Navbar";
+import React,{useEffect,useState} from "react";
+import axios from "axios";
+import {useNavigate,link} from "react-router-dom";
+import NavItem from "./NavItem";
 
 const Register = () => {
+  const [data,setData]=useState({
+    fname:'',
+    lname:'',
+    email:'',
+    username:'',
+    password:''
+  })
+  const registerUser=(e)=>{
+    e.preventDefault()
+
+  }
   return (
     <>
-    <Navbar/>
+    <Navbar/> 
     <div className="wrapper">
-      <form>
+      <form onSubmit={registerUser}>
         <h1>Register here</h1>
         <div className="userInputName">
-          <input type="text" placeholder="first name" />
-          <input type="text" placeholder="last name" />
+          <input type="text" placeholder="first name" value={data.fname} onChange={(e)=>setData({...data,fname: e.target.value})}/>
+          <input type="text" placeholder="last name" value={data.lname} onChange={(e)=>setData({...data,lname: e.target.value})}/>
           <br />
         </div>
         <div className="userInput">
-          <input type="text" placeholder="email" />
+          <input type="text" placeholder="email" value={data.email} onChange={(e)=>setData({...data,email: e.target.value})}/>
           <br />
         </div>
         <div className="userInput">
-          <input type="text" placeholder="username" />
+          <input type="text" placeholder="username" value={data.username} onChange={(e)=>setData({...data,username: e.target.value})}/>
           <br />
         </div>
         <div className="userInput">
-          <input type="text" placeholder="password" />
+          <input type="text" placeholder="password" value={data.password} onChange={(e)=>setData({...data,password: e.target.value})}/>
           <br />
         </div>
-        <div className="userInput">
-          <input type="text" placeholder="confirm password" />
-          <br />
+        <div className="Member">
+              <NavItem to="/login"  text="already a member" />
+            </div>
+        
+
+        <div className="loginButton">
+          <button type="submit">SignUp</button>
         </div>
-        <div className="memberType">
-          <h3>why do you want to use this website</h3>
-          <div className="option">
-            <input type="radio" id="type1" name="type" value="Member" />
-            <label for="type1"> I want see and give my reviews</label>
-            <input type="radio" id="type2" name="type" value="Car" />
-            <label for="type">I want to advertise my business</label>
-          </div>
-          <div className="loginButton">
-            <button type="submit">login</button>
-          </div>
-        </div>
+        
       </form>
     </div>
     </>
   );
-};
+}
 
 export default Register;
