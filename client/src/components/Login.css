@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-body {
+.wrapper{
   
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
@@ -9,10 +9,6 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color:aqua;
-  
-
-}
-.wrapper{
   position: fixed;
   margin-top: 10%;
   margin-left: 40%;
