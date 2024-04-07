@@ -12,14 +12,13 @@
   position: fixed;
   margin-top: 10%;
   margin-left: 40%;
-  width: 450px;
   color: white;
   border-radius: 25px;
   border-color: black;
   justify-content: center;
   background: rgba(5, 18, 84, 0.3);
   padding-top: 10px;
-  height: 400px;
+
 
 }
 
