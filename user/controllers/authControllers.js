@@ -1,8 +1,10 @@
+const { hashPassword, comparePassword } = require('../helpers/auth')
 const User =require('../models/User')
 const test=(req,res)=>{
     res.json('test is working')
 
 }
+//register page
 const registerUser=async (req,res)=>{
     try{
         const{fname,lname,email,username,password}=req.body;
@@ -42,8 +44,10 @@ const registerUser=async (req,res)=>{
             return res.json({
             error:'Password is required and should be six letter long'
         })}
+        const hashedPassword=await hashPassword(password)
         const user= await User.create({
-            fname,lname,email,username,password
+            fname,lname,email,username,
+            password:hashedPassword,
         })
         return res.json(user)
     }catch(error){
@@ -51,7 +55,31 @@ const registerUser=async (req,res)=>{
     }
 
 }
+
+
+//login page
+const loginUser=async (req,res)=>{
+    try{
+    const{username,password}=req.body;
+
+    const user=await User.findOne({username})
+    if(!user){
+        return res.json({
+            error:'No user found'
+        })
+    }
+    const match = await comparePassword(password,user.password)
+    if(match){
+        res.json('Passwords match')
+    }
+
+}catch(error){
+    console.log(error)
+}
+}
+
 module.exports={
     test,
-    registerUser
+    registerUser,
+    loginUser
 }

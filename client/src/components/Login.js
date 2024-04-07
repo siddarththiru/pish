@@ -5,24 +5,41 @@ import NavItem from "./NavItem";
 import Navbar from "./Navbar";
 import React,{useState} from "react";
 import axios from "axios";
-import {useNavigate,link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { Button, ButtonGroup } from '@chakra-ui/react';
 import { Flex, Spacer } from '@chakra-ui/react';
+import {toast} from "react-hot-toast";
 import "./Login.css";
+
 
 axios.defaults.baseURl='http://localhost:8000';
 axios.defaults.withCredentials=true
 const Login  = () =>  {
+  const navigate = useNavigate()
   const [data,setData]=useState({
     username:'',
     password:''
   })
-  const LoginUser =(e)=> {
+  const LoginUser =async (e) => {
     e.preventDefault()
-    axios.get('/')
+    const{username,password}=data
     
+    try{
+      const {data}=await axios.post('/login',{
+        username,password
+      })
+      if(data.error){
+        toast.error(data.error)
+      }
+      else{
+        
+        setData({});
+        navigate('/')
+      }
+    }catch(err){
+      console.log(err)
+    }
   }
-  const navigate=useNavigate();
   const [Pass,setPass]=useState('password');
   const showPass=()=> setPass('text');
   const hidePass=()=> setPass('Password');
@@ -33,7 +50,7 @@ const Login  = () =>  {
           <form onSubmit={LoginUser}>
             <div className="heading">
                 <h1>Login</h1>
-                <button onClick={navigate('/')}><ImExit className="icon"/></button>
+                <button><ImExit className="icon"/></button>
             </div>
             <div className="input-box">
               <input type='text' placeholder='Username' required value={data.username} onChange={(e)=>setData({...data,username: e.target.value})}/>
