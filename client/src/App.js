@@ -9,6 +9,9 @@ import AddPlaces from "./pages/AddPlaces";
 import PlaceDetails from "./pages/PlaceDetails";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import {Toaster} from 'react-hot-toast';
+
+Axios.defaults.baseURL='http://localhost:3002';
 
 function App() {
   const [placeList, setPlaceList] = useState([{}]);
@@ -22,6 +25,7 @@ function App() {
   return (
     <ChakraProvider>
       <div className="App">
+        <Toaster position="bottom-right" toastOptions={{duration:2000}}/>
         <BrowserRouter>
           <Routes>
             <Route

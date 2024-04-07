@@ -4,8 +4,10 @@ import React,{useEffect,useState} from "react";
 import axios from "axios";
 import {useNavigate,link} from "react-router-dom";
 import NavItem from "./NavItem";
+import {toast} from "react-hot-toast";
 
-const Register = () => {
+const Register=()=>{
+  const navigate=useNavigate
   const [data,setData]=useState({
     fname:'',
     lname:'',
@@ -13,9 +15,23 @@ const Register = () => {
     username:'',
     password:''
   })
-  const registerUser=(e)=>{
+  const registerUser= async (e)=>{
     e.preventDefault()
-
+    const{fname,lname,email,username,password}=data
+    try{
+      const {data}=await axios.post('/register',{
+        fname,lname,email,username,password
+      })
+      if(data.error){
+        toast.error(data.error)
+      }
+      else{
+        toast.success('Registeration Successful')
+        
+      }
+    }catch(error){
+      console.log(error)
+    }
   }
   return (
     <>
