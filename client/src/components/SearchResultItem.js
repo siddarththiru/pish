@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function SearchResultItem({ result, setActivePlace }) {
-  console.log(typeof setActivePlace);
   return (
     <Link to={`/place-details/${result._id}`}>
       <Flex
