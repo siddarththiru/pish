@@ -5,9 +5,11 @@ import axios from "axios";
 import {useNavigate,link} from "react-router-dom";
 import NavItem from "./NavItem";
 import {toast} from "react-hot-toast";
+import { Button, ButtonGroup } from '@chakra-ui/react';
+import { Flex, Spacer } from '@chakra-ui/react';
 
 const Register=()=>{
-  const navigate=useNavigate
+  const navigate=useNavigate()
   const [data,setData]=useState({
     fname:'',
     lname:'',
@@ -27,12 +29,15 @@ const Register=()=>{
       }
       else{
         toast.success('Registeration Successful')
-        
+        navigate('/')
       }
     }catch(error){
       console.log(error)
     }
   }
+  const [Pass,setPass]=useState('password');
+  const showPass=()=> setPass('text');
+  const hidePass=()=> setPass('Password');
   return (
     <>
     <Navbar/> 
@@ -53,13 +58,17 @@ const Register=()=>{
           <br />
         </div>
         <div className="userInput">
-          <input type="text" placeholder="password" value={data.password} onChange={(e)=>setData({...data,password: e.target.value})}/>
+          <input type={Pass} placeholder="password" value={data.password} onChange={(e)=>setData({...data,password: e.target.value})}/>
           <br />
         </div>
-        <div className="Member">
+        <div className="Member" style={{display:'flex',justifyContent:'center'}}>
               <NavItem to="/login"  text="already a member" />
-            </div>
-        
+        </div>
+        <Flex>
+          <Button onClick={showPass}>Show Password</Button>
+          <Spacer/>
+          <Button onClick={hidePass}>hide Password</Button>
+        </Flex>
 
         <div className="loginButton">
           <button type="submit">SignUp</button>

@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import React,{useState} from "react";
 import axios from "axios";
 import {useNavigate,link} from "react-router-dom";
+import { Button, ButtonGroup } from '@chakra-ui/react';
+import { Flex, Spacer } from '@chakra-ui/react';
 import "./Login.css";
 
 axios.defaults.baseURl='http://localhost:8000';
@@ -20,6 +22,10 @@ const Login  = () =>  {
     axios.get('/')
     
   }
+  const navigate=useNavigate();
+  const [Pass,setPass]=useState('password');
+  const showPass=()=> setPass('text');
+  const hidePass=()=> setPass('Password');
     return(
         <>
         <Navbar/>
@@ -27,19 +33,26 @@ const Login  = () =>  {
           <form onSubmit={LoginUser}>
             <div className="heading">
                 <h1>Login</h1>
-                <button><ImExit className="icon"/></button>
+                <button onClick={navigate('/')}><ImExit className="icon"/></button>
             </div>
             <div className="input-box">
               <input type='text' placeholder='Username' required value={data.username} onChange={(e)=>setData({...data,username: e.target.value})}/>
               <FaRegUserCircle className="icon"/>
             </div>
             <div className="input-box">
-              <input type='password' placeholder='password' required value={data.password} onChange={(e)=>setData({...data,password: e.target.value})}/>
+              <input type={Pass} placeholder='password' required value={data.password} onChange={(e)=>setData({...data,password: e.target.value})}/>
               <TbPasswordUser className="icon"/>
             </div>
+            <Flex>
+              <Button onClick={showPass}>Show Password</Button>
+              <Spacer />
+              <Button onClick={hidePass}>hide Password</Button>
+
+            </Flex>
             <div className="loginButton">
               <button type="submit" >login</button>
             </div>
+
             <div className="newMember">
               <NavItem to="/register"  text="new member Register Here" />
             </div>
