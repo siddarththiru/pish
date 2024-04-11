@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaHome, FaSearch, FaUser } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
 import NavItem from "./NavItem";
 
 function Navbar() {
@@ -28,6 +29,9 @@ function Navbar() {
           </Box>
           <Box m="3">
             <NavItem to="/login" icon={<FaUser />} text="Account" />
+          </Box>
+          <Box m="5">
+            <NavItem to="/add-places" icon={<IoAdd/>} text="Account" />
           </Box>
         </Flex>
       </Box>

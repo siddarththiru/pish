@@ -12,7 +12,7 @@ function AddPlaceForm() {
     location:'',
     description:''
   })
-  const registerUser= async (e)=>{
+  const AddPlace= async (e)=>{
     e.preventDefault()
     const{name,location,description}=data
     try{
@@ -30,14 +30,30 @@ function AddPlaceForm() {
       console.log(error)
     }
   return (
-    <Flex flexDir="column" color="white">
-      <Heading>Add a Place</Heading>
-      <FormControl isRequired width="500px">
-        <Input placeholder="Name" />
-        <Input placeholder="" />
-      </FormControl>
-    </Flex>
+    <div id="add-places">
+      <h1>Welcome to the Review Page!</h1>
+      <h2>Share your experiences and help others discover hidden gems by leaving reviews and adding the places to the website!
+        Your insights can make a world of difference for fellow adventurers seeking the best places to explore.</h2>
+      <form onSubmit={handleSubmit}>
+        <div id='places'>
+          <label htmlFor="placeName">Name of Place:</label>
+          <input type="text" id="placeName" value={Name} onChange={(e) => setData(e.target.value)} required />
+        </div>
+        <div>
+          <label htmlFor="location">Location:</label>
+          <input type="text" id="location" value={location} onChange={(e) => setData(e.target.value)} required />
+        </div>
+        <div>
+          <label htmlFor="reviewText">Your Review:</label>
+          <textarea id="reviewText" value={description} onChange={(e) => setData(e.target.value)} required></textarea>
+        </div>
+        <button type="submit">Submit Review</button>
+      </form>
+      {/* Display thank you message if review is submitted */}
+      {submitted && <h5>Thank you for submitting the review!</h5>}
+    </div>
   );
+
 }}
 
 export default AddPlaceForm;
