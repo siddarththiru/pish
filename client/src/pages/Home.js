@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import ImageSlider from "../components/ImageSlider";
 import { useLocation, useNavigate } from "react-router-dom";
 import SuggestedPlaces from "../components/SuggestedPlaces";
+import Footer from "../components/footer";
 
 function Home({ setActivePlace, placeList }) {
   const location = useLocation();
@@ -15,6 +16,7 @@ function Home({ setActivePlace, placeList }) {
         setActivePlace={setActivePlace}
       />
       <SuggestedPlaces placeList={placeList.slice(0)} />
+      <Footer/>
     </>
   );
 }
