@@ -3,20 +3,22 @@ import { Flex, Box, Text, Heading, Image } from "@chakra-ui/react";
 
 function SuggestedPlaces({ placeList }) {
   return (
-    <Flex color="white" flexDir="column" margin="30px 100px">
+    <Flex color="white" flexDir="column" padding="30px 100px">
       <Heading>Suggested Places</Heading>
-      <Flex flexDir="row" padding="20px">
+      <Flex flexDir="row" flexWrap="wrap" padding="20px">
         {placeList.map((place, index) => (
-          <Box key={index} height="100px" marginRight="20px">
+          <Flex key={index} height="100%" paddingRight="20px" flexDir="column">
             {/*Bug fix*/}
             {place.images && place.images.link1 && (
               <Image
-                width="350px"
+                width="250px"
+                height="200px"
+                objectFit="cover"
                 borderRadius="10px"
                 src={place.images.link1}
               />
             )}
-            <Box
+            <Flex
               padding="5px"
               borderRadius="10px"
               style={{
@@ -25,8 +27,8 @@ function SuggestedPlaces({ placeList }) {
               }}
             >
               <Text>{place.name}</Text>
-            </Box>
-          </Box>
+            </Flex>
+          </Flex>
         ))}
       </Flex>
     </Flex>

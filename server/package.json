@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon index.js"
   },
   "keywords": [],
@@ -17,5 +17,10 @@
     "mongoos": "^0.0.1-security",
     "mongoose": "^8.2.0",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongoose-mock": "^0.4.0",
+    "supertest": "^6.3.4"
   }
 }

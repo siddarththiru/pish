@@ -86,7 +86,6 @@ function PlaceDetails({ activePlace }) {
             src={place.maps}
           ></iframe>
         </Box>
-
         <br />
       </Flex>
       <br />
