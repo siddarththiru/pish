@@ -3,7 +3,6 @@ import React from "react";
 import SearchResultItem from "./SearchResultItem";
 
 function SearchResults({ results, setActivePlace }) {
-  console.log(typeof setActivePlace);
   return (
     <Flex
       width="100%"

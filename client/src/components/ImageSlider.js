@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 
 function ImageSlider({ placeList, setActivePlace }) {
   const [placeIndex, setPlaceIndex] = useState(0);
-  setActivePlace(placeList[placeIndex]);
+
+  useEffect(() => {
+    setActivePlace(placeList[placeIndex]);
+  }, [placeIndex, setActivePlace, placeList]);
 
   const incrementPlaceIndex = () => {
     setPlaceIndex((prevIndex) => (prevIndex + 1) % placeList.length);
@@ -31,27 +34,26 @@ function ImageSlider({ placeList, setActivePlace }) {
   const handleNavButtonClick = (index) => {
     setPlaceIndex(index);
   };
-  const leftArrowStyles={
-      postiton:'absolute',
-      top:"50%",
-      trasform: "translate(0,-50%)",
-      left:"32px",
-      fontSize:'45px',
-      color:"#fff",
-      zIndex:1,
-      cursor:"pointer",
-
-  };
-  const RightArrowStyles={
-    postiton:'absolute',
-    top:"50%",
+  const leftArrowStyles = {
+    postiton: "absolute",
+    top: "50%",
     trasform: "translate(0,-50%)",
-    right:"32px",
-    fontSize:'45px',
-    color:"#fff",
-    zIndex:1,
-    cursor:"pointer",
-  }
+    left: "32px",
+    fontSize: "45px",
+    color: "#fff",
+    zIndex: 1,
+    cursor: "pointer",
+  };
+  const RightArrowStyles = {
+    postiton: "absolute",
+    top: "50%",
+    trasform: "translate(0,-50%)",
+    right: "32px",
+    fontSize: "45px",
+    color: "#fff",
+    zIndex: 1,
+    cursor: "pointer",
+  };
   return (
     <Box className="container">
       <Link
@@ -67,14 +69,10 @@ function ImageSlider({ placeList, setActivePlace }) {
             borderRadius="20px"
             style={sliderImgStyles}
           >
-            <Box style={leftArrowStyles}>
-              
-            </Box>
-            <Box style={RightArrowStyles}>
-              
-            </Box>
+            <Box style={leftArrowStyles}></Box>
+            <Box style={RightArrowStyles}></Box>
           </Box>
-          
+
           <Box
             mt="-100px"
             height="100px"
