@@ -1,11 +1,11 @@
 import "./Register.css";
 import Navbar from "./Navbar";
-import React,{useEffect,useState} from "react";
+import React,{useState} from "react";
 import axios from "axios";
-import {useNavigate,link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import NavItem from "./NavItem";
 import {toast} from "react-hot-toast";
-import { Button, ButtonGroup } from '@chakra-ui/react';
+import { Button} from '@chakra-ui/react';
 import { Flex, Spacer } from '@chakra-ui/react';
 
 const Register=()=>{
@@ -50,7 +50,7 @@ const Register=()=>{
           <br />
         </div>
         <div className="userInput">
-          <input type="text" placeholder="email" value={data.email} onChange={(e)=>setData({...data,email: e.target.value})}/>
+          <input type="email" placeholder="email" value={data.email} onChange={(e)=>setData({...data,email: e.target.value})}/>
           <br />
         </div>
         <div className="userInput">

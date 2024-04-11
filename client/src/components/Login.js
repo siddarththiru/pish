@@ -32,7 +32,6 @@ const Login  = () =>  {
         toast.error(data.error)
       }
       else{
-        
         setData({});
         navigate('/')
       }
