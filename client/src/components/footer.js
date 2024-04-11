@@ -1,7 +1,7 @@
 // Footer.js
 import React from 'react';
 import "./footer.css";
-//import Subscribe from './pages/Newsletter';
+import Subscribe from './Newsletter';
 
 const Footer = () => {
   return (
@@ -33,7 +33,7 @@ const Footer = () => {
           <p>&copy; 2024 PISH. All rights reserved.</p>
            </div>
         </div>
-        <div></div>
+        <div><Subscribe/></div>
       </div>
     </footer>
   );

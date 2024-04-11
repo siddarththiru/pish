@@ -1,0 +1,46 @@
+/*Newsletter styling*/
+#newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #b7cff5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#newsletter-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#newsletter-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#newsletter-content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#newsletter-content ul {
+  
+  padding: 0;
+  list-style-type: square;
+}
+
+#newsletter-content ul li {
+  margin-bottom: 10px;
+}
+
+#newsletter-content .featured-restaurant {
+  border: 1px solid #8a92e8;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#bold-text{
+  font-weight: bold;
+}
+
