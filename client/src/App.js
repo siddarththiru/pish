@@ -10,6 +10,7 @@ import PlaceDetails from "./pages/PlaceDetails";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import {Toaster} from 'react-hot-toast';
+import Newsletter from "./pages/Newsletters";
 
 Axios.defaults.baseURL='http://localhost:3002';
 
@@ -47,6 +48,7 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/newsletter" element={<Newsletter/>} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaHome, FaSearch, FaUser } from "react-icons/fa";
 import NavItem from "./NavItem";
+import { TfiAgenda } from "react-icons/tfi";
 
 function Navbar() {
   return (
@@ -28,6 +29,9 @@ function Navbar() {
           </Box>
           <Box m="3">
             <NavItem to="/login" icon={<FaUser />} text="Account" />
+          </Box>
+          <Box m="4">
+            <NavItem to="/newsletter" icon={<TfiAgenda />} text="Newsletter" />
           </Box>
         </Flex>
       </Box>
