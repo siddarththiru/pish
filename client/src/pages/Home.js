@@ -12,8 +12,11 @@ function Home({ setActivePlace, placeList }) {
         placeList={placeList.slice(0, 6)}
         setActivePlace={setActivePlace}
       />
-      <SuggestedPlaces placeList={placeList.slice(0)} />
-      <Footer/>
+      <SuggestedPlaces
+        placeList={placeList.slice(7)}
+        setActivePlace={setActivePlace}
+      />
+      <Footer />
     </>
   );
 }

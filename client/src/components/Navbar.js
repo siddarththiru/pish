@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaHome, FaSearch, FaUser } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
 import NavItem from "./NavItem";
 import { TfiAgenda } from "react-icons/tfi";
 
@@ -32,6 +33,8 @@ function Navbar() {
           </Box>
           <Box m="4">
             <NavItem to="/newsletter" icon={<TfiAgenda />} text="Newsletter" />
+          <Box m="5">
+            <NavItem to="/add-places" icon={<IoAdd/>} text="Account" />
           </Box>
         </Flex>
       </Box>
