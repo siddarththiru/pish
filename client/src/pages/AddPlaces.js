@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import AddPlaceForm from "../components/AddPlaceForm";
+import Navbar from '../components/Navbar';
 
 
 function AddPlaces() {
