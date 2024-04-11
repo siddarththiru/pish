@@ -27,13 +27,9 @@ app.get("/getPlaces", (req, res) => {
     });
 });
 
-app.post("/createPlace", async (req, res) => {
-  const place = req.body;
-  const newPlace = new PlaceModel(place);
-  await newPlace.save();
+app.use(express.json())
 
-  res.json(place);
-});
+app.use('/',require('./routes/authRoutes'))
 
 app.listen(3001, () => {
   console.log("sever running");
