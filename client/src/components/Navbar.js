@@ -33,8 +33,9 @@ function Navbar() {
           </Box>
           <Box m="4">
             <NavItem to="/newsletter" icon={<TfiAgenda />} text="Newsletter" />
+          </Box>
           <Box m="5">
-            <NavItem to="/add-places" icon={<IoAdd/>} text="Account" />
+            <NavItem to="/add-places" icon={<IoAdd/>} text="Add places" />
           </Box>
         </Flex>
       </Box>

@@ -1,0 +1,55 @@
+/*Styling for the review page.*/
+
+#add-place {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #b7cff5;
+}
+
+#add-place  h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#add-place  h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#add-place  form {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-place label {
+  margin-bottom: 10px;
+}
+
+#add-place  input,
+#add-place  textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#add-place  button {
+  background-color: #2377d1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add-place h5 {
+  text-align: center;
+  margin-top: 20px;
+}

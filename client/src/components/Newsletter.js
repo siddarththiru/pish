@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./footer.css";
 
+
 const Subscribe = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);

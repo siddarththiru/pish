@@ -1,10 +1,12 @@
 import React from 'react';
 import "./Newsletter.css";
-
+import Navbar from '../components/Navbar';
 
 
 const Newsletter = () => {
   return (
+    <>
+    <Navbar/>
     <div id="newsletter-content">
        
       <h1>PISH Newsletter</h1>
@@ -55,6 +57,7 @@ const Newsletter = () => {
         </ol>
       </div>
     </div>
+    </>
   );
 };
 
