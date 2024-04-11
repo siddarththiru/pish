@@ -15,6 +15,8 @@ function ImageSliderNavButton(props) {
       <Image
         src={place?.images?.link1}
         height="50px"
+        width="100px"
+        objectFit="cover"
         borderRadius="5px"
       ></Image>
       <Text p="2" color="white">

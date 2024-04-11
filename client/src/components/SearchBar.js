@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 function SearchBar({ placeList, setResults }) {
   const [input, setInput] = useState("");
+
   const handleSearch = (value) => {
     setInput(value);
     const results = placeList.filter((place) => {
@@ -16,6 +17,7 @@ function SearchBar({ placeList, setResults }) {
     });
     setResults(results);
   };
+
   return (
     <Flex
       color="#383E56"
