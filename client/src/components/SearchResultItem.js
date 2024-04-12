@@ -23,7 +23,9 @@ function SearchResultItem({ result, setActivePlace }) {
           maxWidth="100px"
           objectFit="cover"
         />
-        <Text ml="10px">{result.name}</Text>
+        <Text color="#383E56" fontWeight="700" ml="10px">
+          {result.name}
+        </Text>
       </Flex>
     </Link>
   );

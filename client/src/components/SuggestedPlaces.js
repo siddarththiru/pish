@@ -4,22 +4,25 @@ import { Link } from "react-router-dom";
 
 function SuggestedPlaces({ placeList, setActivePlace }) {
   return (
-    <Flex color="white" flexDir="column" padding="30px 100px">
+    <Flex color="white" flexDir="column" padding="30px">
       <Heading>Suggested Places</Heading>
-      <Flex flexDir="row" flexWrap="wrap" padding="20px">
+      <Flex flexDir="row" flexWrap="wrap" padding="5px" justifyContent="center">
         {placeList.map((place, index) => (
           <Link
             to={{
-              pathname: `/place-details/${placeList.id}`,
+              pathname: `/place-details/${place._id}`,
             }}
           >
             <Flex
               key={index}
               height="100%"
-              paddingRight="20px"
+              margin="5px"
               flexDir="column"
               onClick={() => {
                 setActivePlace(place);
+              }}
+              _hover={{
+                backgroundColor: "#",
               }}
             >
               {/*Bug fix*/}

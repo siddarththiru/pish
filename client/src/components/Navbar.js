@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { FaHome, FaSearch, FaUser } from "react-icons/fa";
-import { IoAdd } from "react-icons/io5";
+import { FaHome, FaNewspaper, FaPlus, FaSearch, FaUser } from "react-icons/fa";
 import NavItem from "./NavItem";
-import { TfiAgenda } from "react-icons/tfi";
 
 function Navbar() {
   return (
@@ -32,10 +30,14 @@ function Navbar() {
             <NavItem to="/login" icon={<FaUser />} text="Account" />
           </Box>
           <Box m="4">
-            <NavItem to="/newsletter" icon={<TfiAgenda />} text="Newsletter" />
+            <NavItem
+              to="/newsletter"
+              icon={<FaNewspaper />}
+              text="Newsletter"
+            />
           </Box>
           <Box m="5">
-            <NavItem to="/add-places" icon={<IoAdd/>} text="Add places" />
+            <NavItem to="/add-places" icon={<FaPlus />} text="Add places" />
           </Box>
         </Flex>
       </Box>

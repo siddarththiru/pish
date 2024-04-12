@@ -2,7 +2,6 @@ import { Flex, Image, Text } from "@chakra-ui/react";
 
 function ImageSliderNavButton(props) {
   let place = props.place;
-
   return (
     <Flex
       marginLeft="50px"
@@ -19,7 +18,7 @@ function ImageSliderNavButton(props) {
         objectFit="cover"
         borderRadius="5px"
       ></Image>
-      <Text p="2" color="white">
+      <Text pl="2" color="white">
         {place?.name}
       </Text>
     </Flex>

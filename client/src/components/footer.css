@@ -1,11 +1,11 @@
 /* footer.css */
 footer {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    bottom: 0;
-  }
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  bottom: 0;
+}
   
   .row {
     width: 85%;
@@ -14,7 +14,7 @@ footer {
     justify-content: space-between;
   }
   
-  .col {
+.col {
     flex-basis: 30%;
   }
   
@@ -22,7 +22,7 @@ footer {
     color: #fff;
   }
   
-  p {
+  .col p {
     color: #ccc;
     margin-bottom: 10px;
   }
@@ -39,7 +39,8 @@ footer {
 
   
   /* This is  styling for the newsletter subscription */
-#susbcribe {
+
+  #susbcribe {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -104,6 +105,3 @@ footer {
   font-size: 16px;
   
 }
-
-
-

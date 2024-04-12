@@ -55,7 +55,7 @@ function ImageSlider({ placeList, setActivePlace }) {
     cursor: "pointer",
   };
   return (
-    <Box className="container">
+    <Flex mt="40px" justifyContent="center">
       <Link
         key={placeIndex}
         to={{
@@ -63,7 +63,7 @@ function ImageSlider({ placeList, setActivePlace }) {
           state: { place: placeList[placeIndex] },
         }}
       >
-        <Box height="500px" width="700px">
+        <Box height="500px" width="900px">
           <Box
             className="sliderImg"
             borderRadius="20px"
@@ -103,7 +103,7 @@ function ImageSlider({ placeList, setActivePlace }) {
           </Box>
         ))}
       </Flex>
-    </Box>
+    </Flex>
   );
 }
 

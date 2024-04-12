@@ -37,14 +37,14 @@ function PlaceDetails({ activePlace }) {
             p="2"
             borderRadius="20px"
             src={place.images.link2}
-            width="400px"
+            height="400px"
             alt="image of the place"
           />
           <Image
             p="2"
             borderRadius="20px"
             src={place.images.link3}
-            width="400px"
+            height="400px"
             alt="image of the place"
           />
         </Flex>
