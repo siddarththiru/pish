@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./ImageSlider.css";
 import ImageSliderNavButton from "./ImageSliderNavButton";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
