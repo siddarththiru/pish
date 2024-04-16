@@ -2,32 +2,42 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import "./AddPlaces.css"; 
-import Navbar from "./Navbar";
+import './AddPlaces.css';
+import Navbar from '../components/Navbar';
 
 function AddPlaceForm() {
   const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
     location: "",
-    description: ""
+    description: "",
+    rating: 1 
   });
-  const [reviewSubmitted, setReviewSubmitted] = useState(false); // State variable to track review submission
+  const handleReset = () => {
+    // Reset form fields to initial state
+    setData({
+      name: " ",
+      location: "",
+      description: "",
+      rating: ""
+    });
+  };
+
 
   const AddPlace = async (e) => {
     e.preventDefault();
-    const { name, location, description } = data;
+    const { name, location, description, rating } = data;
     try {
       const response = await axios.post("/add-places", {
         name,
         location,
-        description
+        description,
+        rating
       });
       if (response.data.error) {
         toast.error(response.data.error);
       } else {
         toast.success("Place added successfully!");
-        setReviewSubmitted(true); // Update state to indicate review submission
         navigate("/");
       }
     } catch (error) {
@@ -36,7 +46,9 @@ function AddPlaceForm() {
   };
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    const ratingValue = name === "rating" ? Math.max(1, Math.min(5, parseInt(value))) : value;
+  setData({ ...data, [name]: ratingValue });
   };
 
   return (
@@ -83,9 +95,28 @@ function AddPlaceForm() {
             required
           ></textarea>
         </div>
+        <div>
+          <label htmlFor = "Rating:">Rating:</label><br></br>
+          <label>Please add a rating between 1 and 5</label>
+        <input
+          type="number"
+          id="rating" 
+          name="rating" 
+          value={data.rating} 
+          onChange={handleChange} 
+          min="1" 
+          max="5" 
+          step="1"
+          required 
+        />
+
+        </div>
         <button type="submit">Submit Review</button>
+        <br></br>
+        <button type="button" onClick={handleReset}>Reset</button>
       </form>
-      {reviewSubmitted && <h5>Thank you for submitting the review!</h5>} {/* Conditionally render based on review submission */}
+      <h5>Thank you for submitting the review!</h5>
+      
     </div>
     </>
   );

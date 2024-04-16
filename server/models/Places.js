@@ -53,6 +53,10 @@ const PlaceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  rating: {
+    type: Number, 
+    default: 0, 
+  },
 });
 
 const PlaceModel = mongoose.model("places", PlaceSchema);
