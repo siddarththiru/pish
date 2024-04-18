@@ -11,10 +11,9 @@ function AddPlaceForm() {
     name: "",
     location: "",
     description: "",
-    rating: 1 
+    rating: "", 
   });
   const handleReset = () => {
-    // Reset form fields to initial state
     setData({
       name: " ",
       location: "",
@@ -28,7 +27,7 @@ function AddPlaceForm() {
     e.preventDefault();
     const { name, location, description, rating } = data;
     try {
-      const response = await axios.post("/add-places", {
+      const response = await axios.post("http://localhost:3001/add-places", {
         name,
         location,
         description,
@@ -38,7 +37,7 @@ function AddPlaceForm() {
         toast.error(response.data.error);
       } else {
         toast.success("Place added successfully!");
-        navigate("/");
+        navigate("http://localhost:3000");
       }
     } catch (error) {
       console.log(error);

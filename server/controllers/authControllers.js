@@ -2,26 +2,29 @@ const Places = require("../models/Places");
 const test = (req, res) => {
   res.json("test is working");
 };
-//register page
 const registerPlace = async (req, res) => {
   try {
-    const { name, location, description } = req.body;
+    const { name, location, description,rating } = req.body;
     if (!name) {
       return res.json({
         error: "name is required",
       });
     }
-    if (!type) {
+    if (!location) {
       return res.json({
-        error: "type is required",
+        error: "location is required",
       });
     }
     if (!description) {
       return res.json({
-        error: "lname is required",
+        error: "description's is required",
+      });
+    }if (!rating) {
+      return res.json({
+        error: "description's is required",
       });
     }
-    const eExist = await User.findOne({ location });
+    const eExist = await Places.findOne({ location });
     if (eExist) {
       return res.json({
         error: "location already exist",
@@ -31,14 +34,13 @@ const registerPlace = async (req, res) => {
       name,
       location,
       description,
+      rating
     });
     return res.json(places);
   } catch (error) {
     console.log(error);
   }
 };
-
-//login page
 
 module.exports = {
   test,
